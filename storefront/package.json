@@ -8,7 +8,7 @@
     "medusa-storefront"
   ],
   "scripts": {
-    "wait": "await-backend",
+    "wait": "npx await-backend",
     "launcher": "launch-storefront",
     "dev": "npm run wait && npm run launcher dev",
     "build": "npm run wait && npm run launcher build",
