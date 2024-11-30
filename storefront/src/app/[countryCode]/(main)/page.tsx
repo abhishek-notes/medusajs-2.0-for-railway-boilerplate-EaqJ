@@ -5,10 +5,13 @@ import Hero from "@modules/home/components/hero"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
+import Collections from "@modules/home/components/collections"
+
+
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Palladio Jewellers E-Commerce Storefront",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "A performant frontend ecommerce for Palladio Jewellers by Webloon Studio dot com.",
 }
 
 export default async function Home({
@@ -26,6 +29,7 @@ export default async function Home({
   return (
     <>
       <Hero />
+      <Collections />
       <div className="py-12">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />

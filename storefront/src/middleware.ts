@@ -18,7 +18,7 @@ async function getRegionMap() {
     !regionMap.keys().next().value ||
     regionMapUpdated < Date.now() - 3600 * 1000
   ) {
-    // Fetch regions from Medusa. We can't use the JS client here because middleware is running on Edge and the client needs a Node environment.
+    // Fetch regions from Med. We can't use the JS client here because middleware is running on Edge and the client needs a Node environment.
     const { regions } = await fetch(`${BACKEND_URL}/store/regions`, {
       headers: {
         "x-publishable-api-key": PUBLISHABLE_API_KEY!,
@@ -47,7 +47,7 @@ async function getRegionMap() {
 }
 
 /**
- * Fetches regions from Medusa and sets the region cookie.
+ * Fetches regions from Med and sets the region cookie.
  * @param request
  * @param response
  */
@@ -78,7 +78,7 @@ async function getCountryCode(
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error(
-        "Middleware.ts: Error getting the country code. Did you set up regions in your Medusa Admin and define a NEXT_PUBLIC_MEDUSA_BACKEND_URL environment variable?"
+        "Middleware.ts: Error getting the country code. Did you set up regions in your Admin and define a NEXT_PUBLIC_MED_BACKEND_URL environment variable?"
       )
     }
   }
@@ -142,5 +142,7 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|favicon.ico).*)"],
+   // matcher: ["/((?!api|_next/static|favicon.ico).*)"],
+  // matcher: ["/((?!api|_next/static|favicon.ico|images/).*)"],
+  matcher: ["/((?!api|_next/static|favicon.ico|images/|fonts/|css/|js/).*)"],
 }

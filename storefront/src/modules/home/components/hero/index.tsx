@@ -1,32 +1,37 @@
-import { Github } from "@medusajs/icons"
+"use client"
+
 import { Button, Heading } from "@medusajs/ui"
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-        <span>
-          <Heading
-            level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
-          >
-            Well done! You have successfully deployed your Medusa 2.0 store on Railway!
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Need help customizing your store?
-          </Heading>
-        </span>
-        <a
-          href="https://funkyton.com/medusajs-2-0-is-finally-here/"
-          target="_blank"
+    <div className="relative h-screen w-full bg-black">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-70"
+        style={{
+          backgroundImage: "url('/background.jpg')",
+        }}
+      ></div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <Heading level="h1" className="text-5xl font-bold mb-4">
+          Palladio Jewellers
+        </Heading>
+        <p className="text-lg max-w-2xl mb-8">
+          Discover the epitome of luxury with our exquisite collection of fine
+          jewellery.
+        </p>
+        <Button
+          variant="primary"
+          size="large"
+          onClick={() => (window.location.href = "/collections/all")}
         >
-          <h1 style={{ textDecoration: "underline" }}>
-            Visit the tutorial
-          </h1>
-        </a>
+          Shop Now
+        </Button>
       </div>
     </div>
   )
