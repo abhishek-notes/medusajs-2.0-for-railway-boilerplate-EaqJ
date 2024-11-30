@@ -28,7 +28,7 @@ const Hero = () => {
         <Button
           variant="primary"
           size="large"
-          onClick={() => (window.location.href = "/collections/all")}
+          onClick={() => (window.location.href = "/store")}
         >
           Shop Now
         </Button>

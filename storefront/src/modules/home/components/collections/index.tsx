@@ -22,7 +22,7 @@ const Collections = () => {
             <Button
               className="collection-button"
               onClick={() =>
-                (window.location.href = "/collections/engagement-rings")
+                (window.location.href = "/store")
               }
             >
               View Collection
@@ -40,7 +40,7 @@ const Collections = () => {
           <div className="collection-overlay">
             <Button
               className="collection-button"
-              onClick={() => (window.location.href = "/collections/necklaces")}
+              onClick={() => (window.location.href = "/store")}
             >
               View Collection
             </Button>
@@ -57,7 +57,7 @@ const Collections = () => {
           <div className="collection-overlay">
             <Button
               className="collection-button"
-              onClick={() => (window.location.href = "/collections/earrings")}
+              onClick={() => (window.location.href = "/store")}
             >
               View Collection
             </Button>

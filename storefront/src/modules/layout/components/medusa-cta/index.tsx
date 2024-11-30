@@ -7,8 +7,7 @@ const MedusaCTA = () => {
   return (
     <Text className="flex gap-x-2 txt-compact-small-plus items-center">
       Powered by{" "}
-      <a href="https://www.webloonstudio.com" target="_blank" rel="noreferrer">
-        Webloon Studio
+      <a href="https://www.webloonstudio.com" target="_blank" rel="noreferrer">Webloon Studio
       </a>
     </Text>
   )
